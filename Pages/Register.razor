@@ -1,0 +1,90 @@
+﻿@page "/register"
+@inject NavigationManager Nav
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudCard>
+        <MudCardContent>
+
+            <MudText Typo="Typo.h5" Class="mb-4">Create Account</MudText>
+
+            <MudTextField @bind-Value="fullName"
+                          Label="Full Name"
+                          Variant="Variant.Outlined"
+                          Class="mb-3" />
+
+            <MudTextField @bind-Value="email"
+                          Label="Email"
+                          Variant="Variant.Outlined"
+                          InputType="InputType.Email"
+                          Class="mb-3" />
+
+            <MudTextField @bind-Value="password"
+                          Label="Password"
+                          Variant="Variant.Outlined"
+                          InputType="InputType.Password"
+                          Class="mb-3" />
+
+            <MudTextField @bind-Value="confirmPassword"
+                          Label="Confirm Password"
+                          Variant="Variant.Outlined"
+                          InputType="InputType.Password"
+                          Class="mb-3" />
+
+        </MudCardContent>
+
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       OnClick="HandleRegister"
+                       FullWidth="true">
+                Register
+            </MudButton>
+        </MudCardActions>
+
+    </MudCard>
+
+    @if (message != "")
+    {
+        <MudAlert Severity="@alertType" Class="mt-3">
+            @message
+        </MudAlert>
+    }
+
+    <MudText Class="mt-3">
+        Already have an account?
+        <MudLink Href="/login">Login here</MudLink>
+    </MudText>
+
+</MudContainer>
+
+@code {
+    private string fullName = "";
+    private string email = "";
+    private string password = "";
+    private string confirmPassword = "";
+    private string message = "";
+    private Severity alertType = Severity.Error;
+
+    private async Task HandleRegister()
+    {
+        if (fullName == "" || email == "" || password == "")
+        {
+            alertType = Severity.Error;
+            message = "Please fill in all fields!";
+            return;
+        }
+
+        if (password != confirmPassword)
+        {
+            alertType = Severity.Error;
+            message = "Passwords do not match!";
+            return;
+        }
+
+        //  — no database yet
+        alertType = Severity.Success;
+        message = "Registered successfully! Redirecting to login...";
+        await Task.Delay(1500);
+        Nav.NavigateTo("/login");
+    }
+}

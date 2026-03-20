@@ -1,0 +1,81 @@
+﻿@page "/login"
+@inject NavigationManager Nav
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudCard>
+        <MudCardContent>
+
+            <MudText Typo="Typo.h5" Class="mb-4">Login</MudText>
+
+            <MudTextField @bind-Value="email"
+                          Label="Email"
+                          Variant="Variant.Outlined"
+                          InputType="InputType.Email"
+                          Class="mb-3" />
+
+            <MudTextField @bind-Value="password"
+                          Label="Password"
+                          Variant="Variant.Outlined"
+                          InputType="InputType.Password"
+                          Class="mb-3" />
+
+        </MudCardContent>
+
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       OnClick="HandleLogin"
+                       FullWidth="true">
+                Login
+            </MudButton>
+        </MudCardActions>
+
+    </MudCard>
+
+    @if (message != "")
+    {
+        <MudAlert Severity="@alertType" Class="mt-3">
+            @message
+        </MudAlert>
+    }
+
+    <MudText Class="mt-3">
+        No account yet?
+        <MudLink Href="/register">Register here</MudLink>
+    </MudText>
+
+</MudContainer>
+
+@code {
+    private string email = "";
+    private string password = "";
+    private string message = "";
+    private Severity alertType = Severity.Error;
+
+    // user for demo only
+    private string Email = "kier@gmail.com";
+    private string Password = "1234";
+
+    private async Task HandleLogin()
+    {
+        if (email == "" || password == "")
+        {
+            alertType = Severity.Error;
+            message = "Please fill in all fields!";
+            return;
+        }
+
+        if (email == Email && password == Password)
+        {
+            alertType = Severity.Success;
+            message = "Login successful! Redirecting...";
+            await Task.Delay(1500);
+            Nav.NavigateTo("/dashboard");
+        }
+        else
+        {
+            alertType = Severity.Error;
+            message = "Invalid email or password!";
+        }
+    }
+}

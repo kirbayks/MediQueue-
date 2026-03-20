@@ -1,0 +1,128 @@
+﻿@page "/dashboard"
+@inject NavigationManager Nav
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
+
+    <!-- Header -->
+    <MudPaper Elevation="2" Class="pa-4 mb-6">
+        <MudGrid AlignItems="Center">
+            <MudItem xs="8">
+                <MudText Typo="Typo.h5">
+                    <MudIcon Icon="@Icons.Material.Filled.LocalHospital"
+                             Color="Color.Primary" />
+                    MedCare Dashboard
+                </MudText>
+                <MudText Typo="Typo.body2">
+                    Welcome back, Admin!
+                </MudText>
+            </MudItem>
+            <MudItem xs="4" Style="text-align:right;">
+                <MudButton
+                    Variant="Variant.Outlined"
+                    Color="Color.Error"
+                    StartIcon="@Icons.Material.Filled.Logout"
+                    OnClick="Logout">
+                    Logout
+                </MudButton>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+
+    <!-- Stats Cards -->
+    <MudGrid Class="mb-6">
+
+        <MudItem xs="12" sm="4">
+            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
+                <MudIcon Icon="@Icons.Material.Filled.People"
+                         Color="Color.Primary"
+                         Style="font-size:2.5rem;" />
+                <MudText Typo="Typo.h6" Class="mt-2">Total Patients</MudText>
+                <MudText Typo="Typo.h4" Color="Color.Primary">24</MudText>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="4">
+            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
+                <MudIcon Icon="@Icons.Material.Filled.CalendarMonth"
+                         Color="Color.Success"
+                         Style="font-size:2.5rem;" />
+                <MudText Typo="Typo.h6" Class="mt-2">Appointments</MudText>
+                <MudText Typo="Typo.h4" Color="Color.Success">8</MudText>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="4">
+            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
+                <MudIcon Icon="@Icons.Material.Filled.MedicalServices"
+                         Color="Color.Warning"
+                         Style="font-size:2.5rem;" />
+                <MudText Typo="Typo.h6" Class="mt-2">Doctors</MudText>
+                <MudText Typo="Typo.h4" Color="Color.Warning">5</MudText>
+            </MudPaper>
+        </MudItem>
+
+    </MudGrid>
+
+    <!-- Recent Appointments Table -->
+    <MudPaper Elevation="2" Class="pa-4">
+
+        <MudText Typo="Typo.h6" Class="mb-3">Recent Appointments</MudText>
+
+        <MudTable Items="appointments" Hover="true" Striped="true">
+            <HeaderContent>
+                <MudTh>Patient</MudTh>
+                <MudTh>Doctor</MudTh>
+                <MudTh>Date</MudTh>
+                <MudTh>Status</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>@context.Patient</MudTd>
+                <MudTd>@context.Doctor</MudTd>
+                <MudTd>@context.Date</MudTd>
+                <MudTd>
+                    <MudChip T="string" 
+                        Color="@GetColor(context.Status)"
+                             Size="Size.Small">
+                        @context.Status
+                    </MudChip>
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+
+    </MudPaper>
+
+</MudContainer>
+
+@code {
+    private List<AppointmentItem> appointments = new()
+    {
+        new AppointmentItem { Patient = "Juan Dela Cruz", Doctor = "Dr. Santos", Date = "March 20, 2026", Status = "Confirmed" },
+        new AppointmentItem { Patient = "Maria Garcia", Doctor = "Dr. Reyes", Date = "March 21, 2026", Status = "Pending" },
+        new AppointmentItem { Patient = "Pedro Bautista", Doctor = "Dr. Santos", Date = "March 22, 2026", Status = "Confirmed" },
+        new AppointmentItem { Patient = "Ana Mendoza", Doctor = "Dr. Cruz", Date = "March 23, 2026", Status = "Cancelled" },
+    };
+
+    private Color GetColor(string status)
+    {
+        return status switch
+        {
+            "Confirmed" => Color.Success,
+            "Pending"   => Color.Warning,
+            "Cancelled" => Color.Error,
+            _           => Color.Default
+        };
+    }
+
+    private void Logout()
+    {
+        Nav.NavigateTo("/login");
+    }
+
+    private class AppointmentItem
+    {
+        public string Patient { get; set; } = "";
+        public string Doctor  { get; set; } = "";
+        public string Date    { get; set; } = "";
+        public string Status  { get; set; } = "";
+    }
+}
