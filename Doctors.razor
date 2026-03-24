@@ -1,0 +1,202 @@
+﻿@page "/doctors"
+
+<style>
+    .doctor-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        cursor: pointer;
+        overflow: hidden !important;
+    }
+    .doctor-card:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 16px 40px rgba(26,115,232,0.3) !important;
+    }
+    .doctor-img {
+        transition: height 0.4s ease !important;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+    }
+    .doctor-card:hover .doctor-img {
+        height: 290px !important;
+    }
+</style>
+
+<!-- Hero Header -->
+<MudPaper Elevation="0" Style="background:#1a73e8; padding:48px 40px; text-align:center; border-radius:0;">
+
+    <MudText Style="display:inline-block; background:rgba(255,255,255,0.15); color:white; font-size:11px; font-weight:600; letter-spacing:2px; padding:5px 18px; border-radius:50px; margin-bottom:16px;">
+        OUR MEDICAL TEAM
+    </MudText>
+
+    <MudText Typo="Typo.h4" Style="color:white; font-weight:700; margin-bottom:8px;">
+        Meet Our Doctors
+    </MudText>
+
+    <MudText Typo="Typo.body1" Style="color:rgba(255,255,255,0.8);">
+        Book an appointment with our experienced and verified physicians
+    </MudText>
+
+</MudPaper>
+
+<!-- Main Content -->
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
+
+    <!-- Filter Buttons -->
+    <MudStack Row="true" Spacing="2" Class="mb-6" Wrap="Wrap.Wrap">
+        <MudButton Variant="@GetVariant("All")"
+                   Color="Color.Primary"
+                   Style="border-radius:50px;"
+                   OnClick="@(() => FilterDoctors("All"))">
+            All
+        </MudButton>
+        <MudButton Variant="@GetVariant("Cardiologist")"
+                   Color="Color.Primary"
+                   Style="border-radius:50px;"
+                   OnClick="@(() => FilterDoctors("Cardiologist"))">
+            Cardiology
+        </MudButton>
+        <MudButton Variant="@GetVariant("Pediatrician")"
+                   Color="Color.Primary"
+                   Style="border-radius:50px;"
+                   OnClick="@(() => FilterDoctors("Pediatrician"))">
+            Pediatrics
+        </MudButton>
+        <MudButton Variant="@GetVariant("Neurologist")"
+                   Color="Color.Primary"
+                   Style="border-radius:50px;"
+                   OnClick="@(() => FilterDoctors("Neurologist"))">
+            Neurology
+        </MudButton>
+        <MudButton Variant="@GetVariant("Dermatologist")"
+                   Color="Color.Primary"
+                   Style="border-radius:50px;"
+                   OnClick="@(() => FilterDoctors("Dermatologist"))">
+            Dermatology
+        </MudButton>
+    </MudStack>
+
+    <!-- Doctor Cards -->
+    <MudGrid>
+        @foreach (var doctor in filteredDoctors)
+        {
+            <MudItem xs="12" sm="6" md="4">
+
+                <!-- Use div wrapper so hover works properly -->
+                <div class="doctor-card" style="border-radius:16px; background:white; border:1px solid #e5e7eb;">
+
+                    <!-- Image using plain img tag NOT MudCardMedia -->
+                    <img src="@doctor.Image"
+                         class="doctor-img"
+                         alt="@doctor.Name" />
+
+                    <div style="padding:16px;">
+
+                        <!-- Name -->
+                        <MudText Typo="Typo.h6" Style="font-weight:700; margin-bottom:4px;">
+                            @doctor.Name
+                        </MudText>
+
+                        <!-- Specialty Badge -->
+                        <MudPaper Elevation="0" Style="display:inline-block; background:#e8f0fe; padding:3px 14px; border-radius:50px; margin-bottom:16px;">
+                            <MudText Style="color:#1a73e8; font-size:12px; font-weight:600;">
+                                @doctor.Specialty
+                            </MudText>
+                        </MudPaper>
+
+                        <!-- Stats -->
+                        <MudGrid Spacing="1" Class="mb-3">
+
+                            <MudItem xs="4" Style="text-align:center;">
+                                <MudText Style="font-size:16px; font-weight:700;">
+                                    @doctor.Experience
+                                </MudText>
+                                <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                    Years Exp.
+                                </MudText>
+                            </MudItem>
+
+                            <MudItem xs="4" Style="text-align:center;">
+                                <MudText Style="font-size:16px; font-weight:700;">
+                                    @doctor.Patients
+                                </MudText>
+                                <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                    Patients
+                                </MudText>
+                            </MudItem>
+
+                            <MudItem xs="4" Style="text-align:center;">
+                                <MudText Style="font-size:16px; font-weight:700; color:#1a73e8;">
+                                    @doctor.Rating ⭐
+                                </MudText>
+                                <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                    Rating
+                                </MudText>
+                            </MudItem>
+
+                        </MudGrid>
+
+                        <!-- Book Button -->
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Primary"
+                                   FullWidth="true"
+                                   StartIcon="@Icons.Material.Filled.CalendarMonth"
+                                   Href="/register"
+                                   Style="border-radius:8px; font-weight:600;">
+                            Book Appointment
+                        </MudButton>
+
+                    </div>
+                </div>
+
+            </MudItem>
+        }
+    </MudGrid>
+
+</MudContainer>
+
+@code {
+
+    private string selectedFilter = "All";
+
+    private List<DoctorItem> doctors = new()
+    {
+        new DoctorItem { Name = "Dr. Jose Santos",   Specialty = "Cardiologist",  Experience = "10+", Patients = "500+", Rating = "4.9", Image = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=top" },
+        new DoctorItem { Name = "Dr. Maria Reyes",   Specialty = "Pediatrician",  Experience = "8+",  Patients = "300+", Rating = "4.8", Image = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=top" },
+        new DoctorItem { Name = "Dr. Ramon Cruz",    Specialty = "Neurologist",   Experience = "15+", Patients = "800+", Rating = "5.0", Image = "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=top" },
+        new DoctorItem { Name = "Dr. Ana Mendoza",   Specialty = "Dermatologist", Experience = "6+",  Patients = "200+", Rating = "4.7", Image = "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=top" },
+        new DoctorItem { Name = "Dr. Luis Garcia",   Specialty = "Cardiologist",  Experience = "12+", Patients = "600+", Rating = "4.9", Image = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=top" },
+        new DoctorItem { Name = "Dr. Rosa Bautista", Specialty = "Pediatrician",  Experience = "9+",  Patients = "400+", Rating = "4.8", Image = "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&h=400&fit=crop&crop=top" },
+    };
+
+    private List<DoctorItem> filteredDoctors = new();
+
+    protected override void OnInitialized()
+    {
+        filteredDoctors = doctors;
+    }
+
+    private void FilterDoctors(string filter)
+    {
+        selectedFilter = filter;
+        filteredDoctors = filter == "All"
+            ? doctors
+            : doctors.Where(d => d.Specialty == filter).ToList();
+    }
+
+    private Variant GetVariant(string filter)
+    {
+        return selectedFilter == filter ? Variant.Filled : Variant.Outlined;
+    }
+
+    private class DoctorItem
+    {
+        public string Name       { get; set; } = "";
+        public string Specialty  { get; set; } = "";
+        public string Experience { get; set; } = "";
+        public string Patients   { get; set; } = "";
+        public string Rating     { get; set; } = "";
+        public string Image      { get; set; } = "";
+    }
+}
