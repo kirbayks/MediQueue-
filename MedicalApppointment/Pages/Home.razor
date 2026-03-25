@@ -1,0 +1,188 @@
+﻿@page "/"
+
+<!-- Top Info Bar -->
+<div style="background:#111827; padding:8px 40px; display:flex; justify-content:space-between; align-items:center;">
+    <MudText Style="color:rgba(255,255,255,0.7); font-size:13px;">
+        📍 Manila, Philippines
+    </MudText>
+    <div style="display:flex; gap:24px;">
+        <MudText Style="color:rgba(255,255,255,0.7); font-size:13px;">
+            📞 (02) 8888-0000
+        </MudText>
+        <MudText Style="color:rgba(255,255,255,0.7); font-size:13px;">
+            ✉ hello@mediqueue.ph
+        </MudText>
+    </div>
+</div>
+
+<!-- Navbar -->
+<div style="background:white; padding:16px 40px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <div style="display:flex; align-items:center; gap:8px;">
+        <div style="background:#1a73e8; border-radius:8px; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+            <MudIcon Icon="@Icons.Material.Filled.LocalHospital"
+                     Style="color:white; font-size:20px;" />
+        </div>
+        <MudText Style="font-size:18px; font-weight:700; color:#111827;">
+            Medi<span style="color:#1a73e8;">Queue</span>
+        </MudText>
+    </div>
+    <div style="display:flex; gap:32px; align-items:center;">
+        <MudLink Href="/"
+                 Style="color:#1a73e8; font-size:14px; text-decoration:none; font-weight:500;">
+            Home
+        </MudLink>
+        <MudLink Href="/doctors"
+                 Style="color:#6b7280; font-size:14px; text-decoration:none;">
+            Doctors
+        </MudLink>
+        <MudLink Href="/register"
+                 Style="color:#6b7280; font-size:14px; text-decoration:none;">
+            Book Appointment
+        </MudLink>
+        <MudLink Href="/dashboard"
+                 Style="color:#6b7280; font-size:14px; text-decoration:none;">
+            Dashboard
+        </MudLink>
+    </div>
+    <div style="display:flex; gap:12px;">
+        <MudButton Variant="Variant.Outlined"
+                   Color="Color.Primary"
+                   Href="/login"
+                   Style="border-radius:50px; font-weight:600;">
+            Login
+        </MudButton>
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   Href="/register"
+                   Style="border-radius:50px; font-weight:600;">
+            Register
+        </MudButton>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<div style="
+    background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1600');
+    background-size: cover;
+    background-position: center;
+    min-height: 88vh;
+    position: relative;
+    display: flex;
+    align-items: center;">
+
+    <!-- Dark Overlay -->
+    <div style="position:absolute; inset:0; background:rgba(10,20,50,0.65);"></div>
+
+    <!-- Hero Content -->
+    <MudContainer MaxWidth="MaxWidth.Large" Style="position:relative; z-index:1;">
+        <MudGrid>
+            <MudItem xs="12" sm="7">
+
+                <!-- Badge -->
+                <div style="
+                    display:inline-block;
+                    border:1.5px solid rgba(255,255,255,0.6);
+                    color:white;
+                    font-size:12px;
+                    font-weight:600;
+                    letter-spacing:2px;
+                    padding:6px 20px;
+                    border-radius:50px;
+                    margin-bottom:28px;">
+                    TRUSTED HEALTHCARE
+                </div>
+
+                <!-- Heading -->
+                <MudText Style="color:white; font-size:3.5rem; font-weight:800; line-height:1.15; margin-bottom:8px;">
+                    Making Health Care
+                </MudText>
+
+                <MudText Style="color:#64b5f6; font-size:3.5rem; font-weight:800; font-style:italic; line-height:1.15; margin-bottom:28px;">
+                    Better Together
+                </MudText>
+
+                <!-- Description -->
+                <MudText Style="color:rgba(255,255,255,0.8); font-size:1.1rem; line-height:1.8; max-width:500px; margin-bottom:40px;">
+                    Book appointments with verified doctors, manage your
+                    health records, and get the care you deserve — all in one place.
+                </MudText>
+
+                <!-- Buttons -->
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Size="Size.Large"
+                               Href="/register"
+                               StartIcon="@Icons.Material.Filled.CalendarMonth"
+                               Style="border-radius:8px; padding:12px 28px; font-weight:700; font-size:15px;">
+                        Make an Appointment
+                    </MudButton>
+
+                    <MudButton Variant="Variant.Outlined"
+                               Size="Size.Large"
+                               Href="/doctors"
+                               EndIcon="@Icons.Material.Filled.ArrowForward"
+                               Style="border-radius:8px; padding:12px 28px; font-weight:600; font-size:15px; color:white; border-color:rgba(255,255,255,0.7);">
+                        View Doctors
+                    </MudButton>
+                </div>
+
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+
+</div>
+
+<!-- Blue Bottom Bar -->
+<div style="background:#1a73e8;">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudGrid>
+
+            <MudItem xs="12" sm="4">
+                <div style="display:flex; align-items:center; gap:16px; padding:24px 0; border-right:1px solid rgba(255,255,255,0.2);">
+                    <MudIcon Icon="@Icons.Material.Filled.MedicalServices"
+                             Style="color:white; font-size:2.5rem;" />
+                    <div>
+                        <MudText Style="color:white; font-weight:700; font-size:15px;">
+                            Primary Care
+                        </MudText>
+                        <MudText Style="color:rgba(255,255,255,0.75); font-size:13px;">
+                            General health & wellness
+                        </MudText>
+                    </div>
+                </div>
+            </MudItem>
+
+            <MudItem xs="12" sm="4">
+                <div style="display:flex; align-items:center; gap:16px; padding:24px 16px; border-right:1px solid rgba(255,255,255,0.2);">
+                    <MudIcon Icon="@Icons.Material.Filled.LocalHospital"
+                             Style="color:white; font-size:2.5rem;" />
+                    <div>
+                        <MudText Style="color:white; font-weight:700; font-size:15px;">
+                            Emergency Cases
+                        </MudText>
+                        <MudText Style="color:rgba(255,255,255,0.75); font-size:13px;">
+                            Urgent medical support
+                        </MudText>
+                    </div>
+                </div>
+            </MudItem>
+
+            <MudItem xs="12" sm="4">
+                <div style="display:flex; align-items:center; gap:16px; padding:24px 16px;">
+                    <MudIcon Icon="@Icons.Material.Filled.EventAvailable"
+                             Style="color:white; font-size:2.5rem;" />
+                    <div>
+                        <MudText Style="color:white; font-weight:700; font-size:15px;">
+                            Online Appointment
+                        </MudText>
+                        <MudText Style="color:rgba(255,255,255,0.75); font-size:13px;">
+                            Book in under a minute
+                        </MudText>
+                    </div>
+                </div>
+            </MudItem>
+
+        </MudGrid>
+    </MudContainer>
+</div>
