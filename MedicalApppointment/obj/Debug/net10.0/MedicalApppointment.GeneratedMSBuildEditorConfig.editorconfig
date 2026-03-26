@@ -35,8 +35,8 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/BookAppointment.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0FwcG9pbnRtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/Dashboard.razor]
@@ -61,10 +61,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/_Imports.razor]

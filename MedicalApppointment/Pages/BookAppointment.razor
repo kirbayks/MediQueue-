@@ -1,0 +1,235 @@
+﻿@page "/book-appointment"
+@inject NavigationManager Nav
+
+<!-- Hero Header -->
+<MudPaper Elevation="0" Style="background:#1a73e8; padding:48px 40px; text-align:center; border-radius:0;">
+
+    <MudText Style="display:inline-block; background:rgba(255,255,255,0.15); color:white; font-size:11px; font-weight:600; letter-spacing:2px; padding:5px 18px; border-radius:50px; margin-bottom:16px;">
+        BOOK AN APPOINTMENT
+    </MudText>
+
+    <MudText Typo="Typo.h4" Style="color:white; font-weight:700; margin-bottom:8px;">
+        Schedule Your Visit
+    </MudText>
+
+    <MudText Typo="Typo.body1" Style="color:rgba(255,255,255,0.8);">
+        Fill in the form below and we will confirm your appointment shortly
+    </MudText>
+
+</MudPaper>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-8 mb-8">
+    <MudCard Style="border-radius:16px; overflow:hidden;">
+
+        <!-- Patient Information -->
+        <MudPaper Elevation="0" Style="padding:24px 28px; border-bottom:1px solid #e5e7eb; border-radius:0;">
+            <MudText Typo="Typo.h6" Style="font-weight:700; margin-bottom:4px;">
+                Patient Information
+            </MudText>
+            <MudText Typo="Typo.body2" Color="Color.Secondary">
+                Please fill in your personal details
+            </MudText>
+        </MudPaper>
+
+        <MudCardContent Style="padding:28px;">
+            <MudGrid>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        FULL NAME
+                    </MudText>
+                    <MudTextField @bind-Value="fullName"
+                                  Placeholder="Enter your full name"
+                                  Variant="Variant.Outlined"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Person"
+                                  AdornmentColor="Color.Primary" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        EMAIL
+                    </MudText>
+                    <MudTextField @bind-Value="email"
+                                  Placeholder="Enter your email"
+                                  Variant="Variant.Outlined"
+                                  InputType="InputType.Email"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Email"
+                                  AdornmentColor="Color.Primary" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        PHONE NUMBER
+                    </MudText>
+                    <MudTextField @bind-Value="phone"
+                                  Placeholder="Enter your phone number"
+                                  Variant="Variant.Outlined"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Phone"
+                                  AdornmentColor="Color.Primary" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        DATE OF BIRTH
+                    </MudText>
+                    <MudDatePicker @bind-Date="dateOfBirth"
+                                   Placeholder="Select your date of birth"
+                                   Variant="Variant.Outlined"
+                                   Adornment="Adornment.Start"
+                                   AdornmentColor="Color.Primary" />
+                </MudItem>
+
+            </MudGrid>
+        </MudCardContent>
+
+        <!-- Appointment Details -->
+        <MudPaper Elevation="0" Style="padding:24px 28px; border-top:1px solid #e5e7eb; border-bottom:1px solid #e5e7eb; border-radius:0;">
+            <MudText Typo="Typo.h6" Style="font-weight:700; margin-bottom:4px;">
+                Appointment Details
+            </MudText>
+            <MudText Typo="Typo.body2" Color="Color.Secondary">
+                Choose your preferred doctor and schedule
+            </MudText>
+        </MudPaper>
+
+        <MudCardContent Style="padding:28px;">
+            <MudGrid>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        SPECIALTY
+                    </MudText>
+                    <MudSelect @bind-Value="specialty"
+                               Placeholder="Choose specialty"
+                               Variant="Variant.Outlined"
+                               Adornment="Adornment.Start"
+                               AdornmentIcon="@Icons.Material.Filled.MedicalServices"
+                               AdornmentColor="Color.Primary">
+                        <MudSelectItem Value="@("Cardiologist")">Cardiologist</MudSelectItem>
+                        <MudSelectItem Value="@("Pediatrician")">Pediatrician</MudSelectItem>
+                        <MudSelectItem Value="@("Neurologist")">Neurologist</MudSelectItem>
+                        <MudSelectItem Value="@("Dermatologist")">Dermatologist</MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        SELECT DOCTOR
+                    </MudText>
+                    <MudSelect @bind-Value="doctor"
+                               Placeholder="Choose a doctor"
+                               Variant="Variant.Outlined"
+                               Adornment="Adornment.Start"
+                               AdornmentIcon="@Icons.Material.Filled.Person"
+                               AdornmentColor="Color.Primary">
+                        <MudSelectItem Value="@("Dr. Jose Santos")">Dr. Jose Santos</MudSelectItem>
+                        <MudSelectItem Value="@("Dr. Maria Reyes")">Dr. Maria Reyes</MudSelectItem>
+                        <MudSelectItem Value="@("Dr. Ramon Cruz")">Dr. Ramon Cruz</MudSelectItem>
+                        <MudSelectItem Value="@("Dr. Ana Mendoza")">Dr. Ana Mendoza</MudSelectItem>
+                        <MudSelectItem Value="@("Dr. Luis Garcia")">Dr. Luis Garcia</MudSelectItem>
+                        <MudSelectItem Value="@("Dr. Rosa Bautista")">Dr. Rosa Bautista</MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        APPOINTMENT DATE
+                    </MudText>
+                    <MudDatePicker @bind-Date="appointmentDate"
+                                   Placeholder="Select appointment date"
+                                   Variant="Variant.Outlined"
+                                   Adornment="Adornment.Start"
+                                   AdornmentColor="Color.Primary"
+                                   MinDate="DateTime.Today" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                        PREFERRED TIME
+                    </MudText>
+                    <MudSelect @bind-Value="preferredTime"
+                               Placeholder="Select time"
+                               Variant="Variant.Outlined"
+                               Adornment="Adornment.Start"
+                               AdornmentIcon="@Icons.Material.Filled.AccessTime"
+                               AdornmentColor="Color.Primary">
+                        <MudSelectItem Value="@("8:00 AM")">8:00 AM</MudSelectItem>
+                        <MudSelectItem Value="@("9:00 AM")">9:00 AM</MudSelectItem>
+                        <MudSelectItem Value="@("10:00 AM")">10:00 AM</MudSelectItem>
+                        <MudSelectItem Value="@("11:00 AM")">11:00 AM</MudSelectItem>
+                        <MudSelectItem Value="@("1:00 PM")">1:00 PM</MudSelectItem>
+                        <MudSelectItem Value="@("2:00 PM")">2:00 PM</MudSelectItem>
+                        <MudSelectItem Value="@("3:00 PM")">3:00 PM</MudSelectItem>
+                        <MudSelectItem Value="@("4:00 PM")">4:00 PM</MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+
+            </MudGrid>
+        </MudCardContent>
+
+        <!-- Reason -->
+        <MudCardContent Style="padding:0 28px 28px;">
+
+            <MudText Style="font-size:12px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                REASON FOR VISIT
+            </MudText>
+            <MudTextField @bind-Value="reason"
+                          Placeholder="Describe your symptoms or reason for visit..."
+                          Variant="Variant.Outlined"
+                          Lines="4" />
+
+            @if (message != "")
+            {
+                <MudAlert Severity="@alertType" Class="mt-4">
+                    @message
+                </MudAlert>
+            }
+
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       FullWidth="true"
+                       Size="Size.Large"
+                       OnClick="HandleBooking"
+                       StartIcon="@Icons.Material.Filled.CalendarMonth"
+                       Style="border-radius:8px; font-weight:700; margin-top:24px; padding:12px;">
+                Confirm Appointment
+            </MudButton>
+
+        </MudCardContent>
+
+    </MudCard>
+</MudContainer>
+
+@code {
+    private string fullName = "";
+    private string email = "";
+    private string phone = "";
+    private DateTime? dateOfBirth = null;
+    private string specialty = "";
+    private string doctor = "";
+    private DateTime? appointmentDate = null;
+    private string preferredTime = "";
+    private string reason = "";
+    private string message = "";
+    private Severity alertType = Severity.Error;
+
+    private async Task HandleBooking()
+    {
+        if (fullName == "" || email == "" || phone == "" ||
+            doctor == "" || appointmentDate == null || preferredTime == "")
+        {
+            alertType = Severity.Error;
+            message = "Please fill in all required fields!";
+            return;
+        }
+
+        alertType = Severity.Success;
+        message = $"Appointment confirmed with {doctor} on {appointmentDate?.ToString("MMMM dd, yyyy")} at {preferredTime}!";
+
+        await Task.Delay(2000);
+        Nav.NavigateTo("/dashboard");
+    }
+}

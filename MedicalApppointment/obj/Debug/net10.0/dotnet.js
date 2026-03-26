@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "MedicalApppointment",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-wsGpIRmGQeT8ntoQju3Jhuu2hmKAlsynL0m3684lkiY=",
+    "hash": "sha256-QZesJ9msvYQCkcOJ5dUTUHa5SLkVD5dbr+bx5hQJFkI=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.69poregybn.js"
@@ -1260,16 +1260,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MedicalApppointment.wasm",
-        "name": "MedicalApppointment.aeojx79yf7.wasm",
-        "integrity": "sha256-vrDCShXqH5HthsVGwrPo36WDs6NXBGYE+wfXWY0W8qs=",
+        "name": "MedicalApppointment.25bqrq9mf4.wasm",
+        "integrity": "sha256-5m3bKc/wRRhU0Vv4GDQ56MDMvVaajkBcoJIG+NjvRQE=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "MedicalApppointment.pdb",
-        "name": "MedicalApppointment.hmycokq8on.pdb",
-        "integrity": "sha256-tz09GMC0Od3iGGlgKOPcdlpWXi84NW8GGry2ZyeOxXI=",
+        "name": "MedicalApppointment.orcu9bzgai.pdb",
+        "integrity": "sha256-3H4ZYbQo8f36IRtk7daZ36pFJPn0tlcYko4MJ5zKGqs=",
         "cache": "force-cache"
       }
     ],
