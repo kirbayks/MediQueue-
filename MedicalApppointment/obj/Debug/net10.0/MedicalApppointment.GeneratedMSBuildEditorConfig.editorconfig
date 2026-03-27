@@ -35,6 +35,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/AboutUs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXRVcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/PC/source/repos/MedicalApppointment/MedicalApppointment/Pages/BookAppointment.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va0FwcG9pbnRtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

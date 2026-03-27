@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qmEnUiXHTt8=",
+  "dgSpecHash": "ydoygZ0zG6M=",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\source\\repos\\MedicalApppointment\\MedicalApppointment\\MedicalApppointment.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.2\\microsoft.aspnetcore.app.internal.assets.10.0.2.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.5\\microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.2\\microsoft.aspnetcore.authorization.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.2\\microsoft.aspnetcore.components.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\10.0.2\\microsoft.aspnetcore.components.analyzers.10.0.2.nupkg.sha512",
@@ -13,7 +13,7 @@
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.2\\microsoft.aspnetcore.components.webassembly.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\10.0.2\\microsoft.aspnetcore.components.webassembly.devserver.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.2\\microsoft.aspnetcore.metadata.10.0.2.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.200-preview.0.26103.119\\microsoft.dotnet.hotreload.webassembly.browser.10.0.200-preview.0.26103.119.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.201\\microsoft.dotnet.hotreload.webassembly.browser.10.0.201.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.2\\microsoft.extensions.configuration.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.2\\microsoft.extensions.configuration.abstractions.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.2\\microsoft.extensions.configuration.binder.10.0.2.nupkg.sha512",
@@ -36,11 +36,10 @@
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.validation\\10.0.2\\microsoft.extensions.validation.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.jsinterop\\10.0.2\\microsoft.jsinterop.10.0.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.2\\microsoft.jsinterop.webassembly.10.0.2.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.2\\microsoft.net.illink.tasks.10.0.2.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.3\\microsoft.net.sdk.webassembly.pack.10.0.3.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.5\\microsoft.net.illink.tasks.10.0.5.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.5\\microsoft.net.sdk.webassembly.pack.10.0.5.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\mudblazor\\8.6.0\\mudblazor.8.6.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.ref\\10.0.3\\microsoft.netcore.app.ref.10.0.3.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.3\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.3.nupkg.sha512"
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.5.nupkg.sha512"
   ],
   "logs": []
 }

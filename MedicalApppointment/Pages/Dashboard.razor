@@ -1,98 +1,172 @@
 ﻿@page "/dashboard"
 @inject NavigationManager Nav
 
+<!-- Blue Header -->
+<MudPaper Elevation="0" Style="background:#1a73e8; padding:24px 32px; border-radius:0;">
+    <MudGrid AlignItems="Center">
+
+        <MudItem xs="8">
+            <MudText Style="color:rgba(255,255,255,0.8); font-size:13px;">
+                Welcome back,
+            </MudText>
+            <MudText Style="color:white; font-size:22px; font-weight:700;">
+                Admin 👋
+            </MudText>
+        </MudItem>
+
+        <MudItem xs="4" Style="text-align:right;">
+            <MudButton Variant="Variant.Filled"
+                       Style="background:white; color:#1a73e8; border-radius:8px; font-weight:600; margin-right:8px;"
+                       StartIcon="@Icons.Material.Filled.CalendarMonth"
+                       Href="/book-appointment">
+                Book Appointment
+            </MudButton>
+            <MudButton Variant="Variant.Outlined"
+                       Style="border-color:rgba(255,255,255,0.5); color:white; border-radius:8px;"
+                       StartIcon="@Icons.Material.Filled.Logout"
+                       OnClick="OpenLogoutDialog">
+                Logout
+            </MudButton>
+        </MudItem>
+
+    </MudGrid>
+</MudPaper>
+
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
-
-    <!-- Header -->
-    <MudPaper Elevation="2" Class="pa-4 mb-6">
-        <MudGrid AlignItems="Center">
-            <MudItem xs="8">
-                <MudText Typo="Typo.h5">
-                    <MudIcon Icon="@Icons.Material.Filled.LocalHospital"
-                             Color="Color.Primary" />
-                    MedCare Dashboard
-                </MudText>
-                <MudText Typo="Typo.body2">
-                    Welcome back, Admin!
-                </MudText>
-            </MudItem>
-            <MudItem xs="4" Style="text-align:right;">
-                <MudButton
-                    Variant="Variant.Outlined"
-                    Color="Color.Error"
-                    StartIcon="@Icons.Material.Filled.Logout"
-                    OnClick="Logout">
-                    Logout
-                </MudButton>
-            </MudItem>
-        </MudGrid>
-    </MudPaper>
-
-    <MudButton Variant="Variant.Filled"
-               Color="Color.Primary"
-               Href="/book-appointment"
-               StartIcon="@Icons.Material.Filled.CalendarMonth"
-               Style="border-radius:50px;">
-        Book Appointment
-    </MudButton>
 
     <!-- Stats Cards -->
     <MudGrid Class="mb-6">
 
-        <MudItem xs="12" sm="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
-                <MudIcon Icon="@Icons.Material.Filled.People"
-                         Color="Color.Primary"
-                         Style="font-size:2.5rem;" />
-                <MudText Typo="Typo.h6" Class="mt-2">Total Patients</MudText>
-                <MudText Typo="Typo.h4" Color="Color.Primary">24</MudText>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="0" Style="background:white; border-radius:12px; padding:20px; border:0.5px solid #e5e7eb;">
+                <MudGrid AlignItems="Center">
+                    <MudItem xs="8">
+                        <MudText Style="font-size:12px; color:#6b7280; margin-bottom:6px;">
+                            Total Patients
+                        </MudText>
+                        <MudText Style="font-size:28px; font-weight:700; color:#111827;">
+                            124
+                        </MudText>
+                        <MudText Style="font-size:11px; color:green;">
+                            ↑ 12% this month
+                        </MudText>
+                    </MudItem>
+                    <MudItem xs="4" Style="text-align:right;">
+                        <MudPaper Elevation="0" Style="background:#e8f0fe; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; margin-left:auto;">
+                            <MudIcon Icon="@Icons.Material.Filled.People"
+                                     Style="color:#1a73e8;" />
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
             </MudPaper>
         </MudItem>
 
-        <MudItem xs="12" sm="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
-                <MudIcon Icon="@Icons.Material.Filled.CalendarMonth"
-                         Color="Color.Success"
-                         Style="font-size:2.5rem;" />
-                <MudText Typo="Typo.h6" Class="mt-2">Appointments</MudText>
-                <MudText Typo="Typo.h4" Color="Color.Success">8</MudText>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="0" Style="background:white; border-radius:12px; padding:20px; border:0.5px solid #e5e7eb;">
+                <MudGrid AlignItems="Center">
+                    <MudItem xs="8">
+                        <MudText Style="font-size:12px; color:#6b7280; margin-bottom:6px;">
+                            Appointments
+                        </MudText>
+                        <MudText Style="font-size:28px; font-weight:700; color:#111827;">
+                            38
+                        </MudText>
+                        <MudText Style="font-size:11px; color:green;">
+                            ↑ 8% this month
+                        </MudText>
+                    </MudItem>
+                    <MudItem xs="4" Style="text-align:right;">
+                        <MudPaper Elevation="0" Style="background:#dcfce7; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; margin-left:auto;">
+                            <MudIcon Icon="@Icons.Material.Filled.CalendarMonth"
+                                     Style="color:#16a34a;" />
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
             </MudPaper>
         </MudItem>
 
-        <MudItem xs="12" sm="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="text-align:center;">
-                <MudIcon Icon="@Icons.Material.Filled.MedicalServices"
-                         Color="Color.Warning"
-                         Style="font-size:2.5rem;" />
-                <MudText Typo="Typo.h6" Class="mt-2">Doctors</MudText>
-                <MudText Typo="Typo.h4" Color="Color.Warning">5</MudText>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="0" Style="background:white; border-radius:12px; padding:20px; border:0.5px solid #e5e7eb;">
+                <MudGrid AlignItems="Center">
+                    <MudItem xs="8">
+                        <MudText Style="font-size:12px; color:#6b7280; margin-bottom:6px;">
+                            Doctors
+                        </MudText>
+                        <MudText Style="font-size:28px; font-weight:700; color:#111827;">
+                            12
+                        </MudText>
+                        <MudText Style="font-size:11px; color:#6b7280;">
+                            Active physicians
+                        </MudText>
+                    </MudItem>
+                    <MudItem xs="4" Style="text-align:right;">
+                        <MudPaper Elevation="0" Style="background:#fef9c3; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; margin-left:auto;">
+                            <MudIcon Icon="@Icons.Material.Filled.MedicalServices"
+                                     Style="color:#ca8a04;" />
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="0" Style="background:white; border-radius:12px; padding:20px; border:0.5px solid #e5e7eb;">
+                <MudGrid AlignItems="Center">
+                    <MudItem xs="8">
+                        <MudText Style="font-size:12px; color:#6b7280; margin-bottom:6px;">
+                            Pending
+                        </MudText>
+                        <MudText Style="font-size:28px; font-weight:700; color:#111827;">
+                            7
+                        </MudText>
+                        <MudText Style="font-size:11px; color:red;">
+                            Needs attention
+                        </MudText>
+                    </MudItem>
+                    <MudItem xs="4" Style="text-align:right;">
+                        <MudPaper Elevation="0" Style="background:#fee2e2; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; margin-left:auto;">
+                            <MudIcon Icon="@Icons.Material.Filled.Warning"
+                                     Style="color:#dc2626;" />
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
             </MudPaper>
         </MudItem>
 
     </MudGrid>
 
-    <!-- Recent Appointments Table -->
-    <MudPaper Elevation="2" Class="pa-4">
+    <!-- Appointments Table -->
+    <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; overflow:hidden;">
 
-        <MudText Typo="Typo.h6" Class="mb-3">Recent Appointments</MudText>
+        <div style="padding:20px 24px; border-bottom:0.5px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center;">
+            <MudText Style="font-size:15px; font-weight:700; color:#111827;">
+                Recent Appointments
+            </MudText>
+            <MudLink Href="/book-appointment" Style="font-size:12px; color:#1a73e8; font-weight:500;">
+                + New Appointment
+            </MudLink>
+        </div>
 
-        <MudTable Items="appointments" Hover="true" Striped="true">
+        <MudTable Items="appointments"
+                  Hover="true"
+                  Striped="true"
+                  Elevation="0">
             <HeaderContent>
-                <MudTh>Patient</MudTh>
-                <MudTh>Doctor</MudTh>
-                <MudTh>Date</MudTh>
-                <MudTh>Status</MudTh>
+                <MudTh Style="font-size:12px; color:#6b7280; font-weight:600;">PATIENT</MudTh>
+                <MudTh Style="font-size:12px; color:#6b7280; font-weight:600;">DOCTOR</MudTh>
+                <MudTh Style="font-size:12px; color:#6b7280; font-weight:600;">DATE</MudTh>
+                <MudTh Style="font-size:12px; color:#6b7280; font-weight:600;">TIME</MudTh>
+                <MudTh Style="font-size:12px; color:#6b7280; font-weight:600;">STATUS</MudTh>
             </HeaderContent>
             <RowTemplate>
-                <MudTd>@context.Patient</MudTd>
-                <MudTd>@context.Doctor</MudTd>
-                <MudTd>@context.Date</MudTd>
+                <MudTd Style="font-size:13px; font-weight:500;">@context.Patient</MudTd>
+                <MudTd Style="font-size:13px; color:#6b7280;">@context.Doctor</MudTd>
+                <MudTd Style="font-size:13px; color:#6b7280;">@context.Date</MudTd>
+                <MudTd Style="font-size:13px; color:#6b7280;">@context.Time</MudTd>
                 <MudTd>
-                    <MudChip T="string" 
-                        Color="@GetColor(context.Status)"
-                             Size="Size.Small">
+                    <MudText Style="@GetStatusStyle(context.Status)">
                         @context.Status
-                    </MudChip>
+                    </MudText>
                 </MudTd>
             </RowTemplate>
         </MudTable>
@@ -101,36 +175,73 @@
 
 </MudContainer>
 
+<!-- Logout Confirmation Dialog -->
+<MudDialog @bind-IsVisible="showLogoutDialog">
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.Logout" Class="mr-2" />
+            Confirm Logout
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudText>Are you sure you want to logout?</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="CancelLogout" Variant="Variant.Outlined" Color="Color.Default">
+            Cancel
+        </MudButton>
+        <MudButton OnClick="ConfirmLogout" Variant="Variant.Filled" Color="Color.Error">
+            Logout
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
 @code {
+
     private List<AppointmentItem> appointments = new()
     {
-        new AppointmentItem { Patient = "Juan Dela Cruz", Doctor = "Dr. Santos", Date = "March 20, 2026", Status = "Confirmed" },
-        new AppointmentItem { Patient = "Maria Garcia", Doctor = "Dr. Reyes", Date = "March 21, 2026", Status = "Pending" },
-        new AppointmentItem { Patient = "Pedro Bautista", Doctor = "Dr. Santos", Date = "March 22, 2026", Status = "Confirmed" },
-        new AppointmentItem { Patient = "Ana Mendoza", Doctor = "Dr. Cruz", Date = "March 23, 2026", Status = "Cancelled" },
+        new AppointmentItem { Patient = "Juan Dela Cruz",  Doctor = "Dr. Santos",  Date = "Mar 28, 2026", Time = "9:00 AM",  Status = "Confirmed" },
+        new AppointmentItem { Patient = "Maria Garcia",    Doctor = "Dr. Reyes",   Date = "Mar 29, 2026", Time = "10:00 AM", Status = "Pending" },
+        new AppointmentItem { Patient = "Pedro Bautista",  Doctor = "Dr. Cruz",    Date = "Mar 30, 2026", Time = "2:00 PM",  Status = "Confirmed" },
+        new AppointmentItem { Patient = "Ana Mendoza",     Doctor = "Dr. Mendoza", Date = "Mar 31, 2026", Time = "11:00 AM", Status = "Cancelled" },
+        new AppointmentItem { Patient = "Rosa Santiago",   Doctor = "Dr. Santos",  Date = "Apr 01, 2026", Time = "3:00 PM",  Status = "Pending" },
     };
 
-    private Color GetColor(string status)
+    private string GetStatusStyle(string status)
     {
         return status switch
         {
-            "Confirmed" => Color.Success,
-            "Pending"   => Color.Warning,
-            "Cancelled" => Color.Error,
-            _           => Color.Default
+            "Confirmed" => "background:#dcfce7; color:#16a34a; font-size:11px; font-weight:600; padding:4px 12px; border-radius:50px; display:inline-block;",
+            "Pending" => "background:#fef9c3; color:#ca8a04; font-size:11px; font-weight:600; padding:4px 12px; border-radius:50px; display:inline-block;",
+            "Cancelled" => "background:#fee2e2; color:#dc2626; font-size:11px; font-weight:600; padding:4px 12px; border-radius:50px; display:inline-block;",
+            _ => "font-size:11px; padding:4px 12px;"
         };
     }
 
-    private void Logout()
+    private bool showLogoutDialog = false;
+
+    private void OpenLogoutDialog()
     {
-        Nav.NavigateTo("/login");
+        showLogoutDialog = true;
+    }
+
+    private void ConfirmLogout()
+    {
+        showLogoutDialog = false;
+        Nav.NavigateTo("/");
+    }
+
+    private void CancelLogout()
+    {
+        showLogoutDialog = false;
     }
 
     private class AppointmentItem
     {
         public string Patient { get; set; } = "";
-        public string Doctor  { get; set; } = "";
-        public string Date    { get; set; } = "";
-        public string Status  { get; set; } = "";
+        public string Doctor { get; set; } = "";
+        public string Date { get; set; } = "";
+        public string Time { get; set; } = "";
+        public string Status { get; set; } = "";
     }
 }
