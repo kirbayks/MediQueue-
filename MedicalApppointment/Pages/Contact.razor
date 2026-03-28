@@ -1,0 +1,197 @@
+﻿@page "/contact"
+
+<!-- Hero Header -->
+<MudPaper Elevation="0" Style="background:#1a73e8; padding:48px 40px; text-align:center; border-radius:0;">
+
+    <MudText Style="display:inline-block; background:rgba(255,255,255,0.15); color:white; font-size:11px; font-weight:600; letter-spacing:2px; padding:5px 18px; border-radius:50px; margin-bottom:16px;">
+        GET IN TOUCH
+    </MudText>
+
+    <MudText Typo="Typo.h4" Style="color:white; font-weight:700; margin-bottom:8px;">
+        Contact Us
+    </MudText>
+
+    <MudText Typo="Typo.body1" Style="color:rgba(255,255,255,0.8);">
+        We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+    </MudText>
+
+</MudPaper>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-8">
+    <MudGrid>
+
+        <!-- Left Info Cards -->
+        <MudItem xs="12" sm="5">
+            <MudStack Spacing="3">
+
+                <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; padding:20px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <MudPaper Elevation="0" Style="background:#e8f0fe; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <MudIcon Icon="@Icons.Material.Filled.LocationOn"
+                                     Style="color:#1a73e8;" />
+                        </MudPaper>
+                        <div>
+                            <MudText Style="font-size:13px; font-weight:700; color:#111827;">
+                                Our Location
+                            </MudText>
+                            <MudText Style="font-size:12px; color:#6b7280; margin-top:2px;">
+                                Mandaue City, Philippines
+                            </MudText>
+                        </div>
+                    </div>
+                </MudPaper>
+
+                <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; padding:20px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <MudPaper Elevation="0" Style="background:#e8f0fe; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <MudIcon Icon="@Icons.Material.Filled.Phone"
+                                     Style="color:#1a73e8;" />
+                        </MudPaper>
+                        <div>
+                            <MudText Style="font-size:13px; font-weight:700; color:#111827;">
+                                Phone Number
+                            </MudText>
+                            <MudText Style="font-size:12px; color:#6b7280; margin-top:2px;">
+                                (02) 8888-0000
+                            </MudText>
+                        </div>
+                    </div>
+                </MudPaper>
+
+                <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; padding:20px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <MudPaper Elevation="0" Style="background:#e8f0fe; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <MudIcon Icon="@Icons.Material.Filled.Email"
+                                     Style="color:#1a73e8;" />
+                        </MudPaper>
+                        <div>
+                            <MudText Style="font-size:13px; font-weight:700; color:#111827;">
+                                Email Address
+                            </MudText>
+                            <MudText Style="font-size:12px; color:#6b7280; margin-top:2px;">
+                                mediqueue@gmail.com
+                            </MudText>
+                        </div>
+                    </div>
+                </MudPaper>
+
+                <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; padding:20px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <MudPaper Elevation="0" Style="background:#e8f0fe; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <MudIcon Icon="@Icons.Material.Filled.AccessTime"
+                                     Style="color:#1a73e8;" />
+                        </MudPaper>
+                        <div>
+                            <MudText Style="font-size:13px; font-weight:700; color:#111827;">
+                                Working Hours
+                            </MudText>
+                            <MudText Style="font-size:12px; color:#6b7280; margin-top:2px;">
+                                Mon - Sat: 8:00 AM - 5:00 PM
+                            </MudText>
+                        </div>
+                    </div>
+                </MudPaper>
+
+            </MudStack>
+        </MudItem>
+
+        <!-- Right Contact Form -->
+        <MudItem xs="12" sm="7">
+            <MudPaper Elevation="0" Style="background:white; border-radius:12px; border:0.5px solid #e5e7eb; padding:28px;">
+
+                <MudText Typo="Typo.h6" Style="font-weight:700; margin-bottom:4px;">
+                    Send us a Message
+                </MudText>
+                <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-5">
+                    We'll get back to you within 24 hours
+                </MudText>
+
+                <MudText Style="font-size:11px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                    YOUR NAME
+                </MudText>
+                <MudTextField @bind-Value="name"
+                              Placeholder="Enter your name"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Person"
+                              AdornmentColor="Color.Primary"
+                              Class="mb-4" />
+
+                <MudText Style="font-size:11px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                    EMAIL ADDRESS
+                </MudText>
+                <MudTextField @bind-Value="email"
+                              Placeholder="Enter your email"
+                              Variant="Variant.Outlined"
+                              InputType="InputType.Email"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Email"
+                              AdornmentColor="Color.Primary"
+                              Class="mb-4" />
+
+                <MudText Style="font-size:11px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                    SUBJECT
+                </MudText>
+                <MudTextField @bind-Value="subject"
+                              Placeholder="Enter subject"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Subject"
+                              AdornmentColor="Color.Primary"
+                              Class="mb-4" />
+
+                <MudText Style="font-size:11px; color:#6b7280; font-weight:600; letter-spacing:1px; margin-bottom:6px;">
+                    MESSAGE
+                </MudText>
+                <MudTextField @bind-Value="message"
+                              Placeholder="Type your message here..."
+                              Variant="Variant.Outlined"
+                              Lines="5"
+                              Class="mb-5" />
+
+                @if (successMessage != "")
+                {
+                    <MudAlert Severity="Severity.Success" Class="mb-4">
+                        @successMessage
+                    </MudAlert>
+                }
+
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           FullWidth="true"
+                           Size="Size.Large"
+                           OnClick="HandleSubmit"
+                           StartIcon="@Icons.Material.Filled.Send"
+                           Style="border-radius:8px; font-weight:700; padding:12px;">
+                    Send Message
+                </MudButton>
+
+            </MudPaper>
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
+
+@code {
+    private string name = "";
+    private string email = "";
+    private string subject = "";
+    private string message = "";
+    private string successMessage = "";
+
+    private async Task HandleSubmit()
+    {
+        if (name == "" || email == "" || subject == "" || message == "")
+        {
+            successMessage = "";
+            return;
+        }
+
+        successMessage = $"Thank you {name}! Your message has been sent. We'll get back to you within 24 hours!";
+
+        name = "";
+        email = "";
+        subject = "";
+        message = "";
+    }
+}
